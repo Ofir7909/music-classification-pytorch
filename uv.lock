@@ -630,6 +630,7 @@ dependencies = [
     { name = "pytubefix" },
     { name = "torch" },
     { name = "torchaudio" },
+    { name = "torchsummary" },
     { name = "tqdm" },
 ]
 
@@ -646,6 +647,7 @@ requires-dist = [
     { name = "pytubefix", specifier = ">=9.1.1" },
     { name = "torch", specifier = ">=2.7.0", index = "https://download.pytorch.org/whl/cu128" },
     { name = "torchaudio", specifier = ">=2.7.0" },
+    { name = "torchsummary", specifier = ">=1.5.1" },
     { name = "tqdm", specifier = ">=4.67.1" },
 ]
 
@@ -1369,6 +1371,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ef/3a/8a1045f2b00c6300827c1e6a3e661e9d219b5406ef103dc2824604548b8c/torchaudio-2.7.0-cp313-cp313t-manylinux_2_28_aarch64.whl", hash = "sha256:1d928aeff495a0807b4da3b0dd46e15eae8070da5e7ed6d35c1dcfd9fdfe2b74", size = 1700439 },
     { url = "https://files.pythonhosted.org/packages/72/53/21d589a5a41702b5d37bae224286986cb707500d5ecdbfdcfdbac9381a08/torchaudio-2.7.0-cp313-cp313t-manylinux_2_28_x86_64.whl", hash = "sha256:ee4add33f24e9cb959bd9de89f36de5ebf844eda040d1d0b38f08617d67dedc3", size = 3466356 },
     { url = "https://files.pythonhosted.org/packages/00/0b/5ef81aaacce5e9c316659ddc61a2b1e4f984a504d4a06fe61bab04cc75f1/torchaudio-2.7.0-cp313-cp313t-win_amd64.whl", hash = "sha256:725dbbcc9e744ca62de8856262c6f472ca26b1cd5db062b062a2d6b66a336cc0", size = 2544970 },
+]
+
+[[package]]
+name = "torchsummary"
+version = "1.5.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5b/64/aa68ef646bcccab489cac2a85d366559df7d9d24406dbbf3344703cbe33f/torchsummary-1.5.1.tar.gz", hash = "sha256:981bf689e22e0cf7f95c746002f20a24ad26aa6b9d861134a14bc6ce92230590", size = 3749 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7d/18/1474d06f721b86e6a9b9d7392ad68bed711a02f3b61ac43f13c719db50a6/torchsummary-1.5.1-py3-none-any.whl", hash = "sha256:10f41d1743fb918f83293f13183f532ab1bb8f6639a1b89e5f8592ec1919a976", size = 2826 },
 ]
 
 [[package]]
