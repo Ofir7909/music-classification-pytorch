@@ -15,3 +15,5 @@ Extract it under a folder named GTZAN.
 
 2. run `uv sync`
 
+3. for predicting songs from YouTube you also need to install FFmpeg from https://ffmpeg.org/
+
