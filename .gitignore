@@ -1,5 +1,7 @@
 /.venv/
 /GTZAN/
 /models/
+/__pycache__/
 *.pkl
+*.h5
 *.log
