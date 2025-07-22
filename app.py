@@ -42,13 +42,13 @@ def download_from_youtube(url: str) -> io.BytesIO:
         raise gr.Error("Failed to download the audio.\n" + str(e))
 
 
-def predict_genre_from_youtube(url: str) -> dict[str, float]:
+def predict_genre_from_youtube(url: str, n=30) -> dict[str, float]:
     file = download_from_youtube(url)
 
     mel_spec = dataset.MusicGenres.make_mel(file)
     mel_chunks = dataset.MusicGenres.split_to_chunks(mel_spec)
     np.random.shuffle(mel_chunks)
-    mel_chunks = mel_chunks if len(mel_chunks) <= 10 else mel_chunks[:10]
+    mel_chunks = mel_chunks if len(mel_chunks) <= n else mel_chunks[:n]
     mel_chunks = torch.from_numpy(np.array(mel_chunks))
     mel_chunks = mel_chunks.view(-1, 1, 128, 128).to(device)
 
@@ -88,7 +88,7 @@ with gr.Blocks(css=css) as app:
         url = gr.Text(
             label="Url", placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         )
-        submit_btn = gr.Button("Predict", elem_classes="bg-green-500")
+        submit_btn = gr.Button("Predict", variant="primary")
         with gr.Row():
             video_player_html = gr.HTML()
             labels = gr.Label(label="Genre", num_top_classes=3)
@@ -97,4 +97,4 @@ with gr.Blocks(css=css) as app:
         fn=on_predict_btn_clicked, inputs=url, outputs=[video_player_html, labels]
     )
 
-app.launch()
+app.launch(share=True)

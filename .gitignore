@@ -2,6 +2,7 @@
 /GTZAN/
 /models/
 /__pycache__/
+/.gradio/
 *.pkl
 *.h5
 *.log
